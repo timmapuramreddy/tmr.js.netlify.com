@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+    
+    <title>Personal Expense</title>
+</head>
+<body>
+    <h1 id="headingTotExpense">0</h1>
+    <input id="inputAmt" type="text"></input>
+    <button id="btnAddExpense">+</button>
+</body>
+<script>
+        const headingEl = document.querySelector("#headingTotExpense");
+        let totalExpense = 0;
+        // Function to increment the number
+        headingEl.textContent = totalExpense;
+
+        function addExpenseToTotal(){
+            const inputElement = document.querySelector("#inputAmt");
+            const textAmount = inputElement.value;
+            // console.log({ textAmount });
+            const expense = parseInt(textAmount, 10);
+            // console.log({ expense })
+
+            totalExpense = totalExpense + expense;
+            // console.log({ totalExpense })
+
+            headingEl.textContent = totalExpense;
+        }
+        // get the button element
+        const element = document.querySelector("#btnAddExpense");
+        // console.log(element);
+        //listen to click event
+        element.addEventListener("click", addExpenseToTotal, false)
+        // takea number which increments from zero
+      
+    </script>
+</html>
